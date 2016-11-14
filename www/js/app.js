@@ -157,18 +157,18 @@ confirmationSuccessUrl:  window.location.href,
         }
     })
 
-    // .state('app.sign-up', {
-    //     url: '/sign-up',
-    //     views: {
-    //         'menuContent': {
-    //             templateUrl: 'templates/sign-up.html',
-    //             controller: 'SignUpCtrl'
-    //         },
-    //         'fabContent': {
-    //             template: ''
-    //         }
-    //     }
-    // })
+    .state('app.sign-up', {
+        url: '/sign-up',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/sign-up.html',
+                controller: 'SignUpCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })
 
     .state('app.profile', {
         url: '/profile',
