@@ -110,7 +110,7 @@ angular.module('starter.controllers', [])
 
     $scope.login = function(provider) {
         if (provider == 'email'){
-            $auth.submitLogin(registrationData)
+            $auth.submitLogin($scope.registrationData)
                 .then(function(resp) {
                   $state.go('app.publications');
                 })
