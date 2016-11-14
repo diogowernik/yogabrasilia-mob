@@ -21,11 +21,10 @@
         </div>
         <div class="padding">
             <button ng-show="accountCreateField" ng-click="accountCreate(registrationData)" class="button button-full button-royal ink">Registrar</button>
-            <button ng-show="!accountCreateField" ng-click="login('email')" class="button button-full button-royal ink">Login</button>
+            <button ng-show="!accountCreateField" ng-click="login(registrationData,'email')" class="button button-full button-royal ink">Login</button>
         </div>
         <div class="create-account">
             <button ng-show="!accountCreateField" ng-click="accountCreateField = true" class="button button-full button-energized-900 ink">Criar Conta</button>
-            <!--<button ui-sref="app.sign-up" class="button button-full button-energized-900 ink">Criar Conta</button>-->
         </div>
     </ion-content>
 </ion-view>

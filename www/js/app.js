@@ -13,6 +13,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
         }
     });
 })
+
 .config(function($authProvider) {
     $authProvider.configure({
         apiUrl: 'http://smartmarket.io/api/v1',
@@ -44,8 +45,6 @@ confirmationSuccessUrl:  window.location.href,
  
     });
 })
-
-
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
