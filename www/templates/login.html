@@ -19,7 +19,8 @@
             <ion-md-input ng-model="registrationData.password" placeholder="senha" highlight-color="energized" type="password"></ion-md-input>
         </div>
         <div class="padding">
-            <button ng-click="login(provider,'email')" class="button button-full button-royal ink">Login</button>
+            {{registrationData}}
+            <button ng-click="login('email')" class="button button-full button-royal ink">Login</button>
         </div>
         <div class="create-account">
             <button ui-sref="app.sign-up" class="button button-full button-energized-900 ink">Criar Conta</button>

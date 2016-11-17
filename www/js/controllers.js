@@ -89,7 +89,7 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
     $scope.$parent.clearFabs();
-    
+    $scope.registrationData = {};
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
