@@ -118,7 +118,6 @@ angular.module('starter.controllers', [])
     };    
 })
 
-
 .controller('SignUpCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
     $scope.$parent.clearFabs();
     
@@ -139,15 +138,6 @@ angular.module('starter.controllers', [])
             });
         };
 })
-
-
-// .controller('SignUpCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
-//     $scope.$parent.clearFabs();
-//     $timeout(function() {
-//         $scope.$parent.hideHeader();
-//     }, 0);
-//     ionicMaterialInk.displayEffect();
-// })
 
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
@@ -244,11 +234,9 @@ angular.module('starter.controllers', [])
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
 
-
-
     $http({
       method: 'GET',
-      url: 'http://yoga.smartmarket.io/cards/from-subdomain/1.json'
+      url: 'http://yoga.smartmarket.io/publications/from-subdomain/1.json'
   }).then(function successCallback(response) {
     $scope.users = response.data;
     
@@ -303,25 +291,6 @@ angular.module('starter.controllers', [])
 
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
-})
-
-.controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
-
-    // Activate ink for controller
-    ionicMaterialInk.displayEffect();
-
-    ionicMaterialMotion.pushDown({
-        selector: '.push-down'
-    });
-    ionicMaterialMotion.fadeSlideInRight({
-        selector: '.animate-fade-slide-in .item'
-    });
-
 })
 
 .controller('ConfigCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {

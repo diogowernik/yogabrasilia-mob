@@ -101,7 +101,7 @@ confirmationSuccessUrl:  window.location.href,
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
-                        document.getElementById('fab-publication').classList.toggle('on');
+                        // document.getElementById('fab-publication').classList.toggle('on');
                     }, 200);
                 }
             }
@@ -121,24 +121,6 @@ confirmationSuccessUrl:  window.location.href,
                     $timeout(function () {
                         document.getElementById('fab-friends').classList.toggle('on');
                     }, 900);
-                }
-            }
-        }
-    })
-
-    .state('app.gallery', {
-        url: '/gallery',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/gallery.html',
-                controller: 'GalleryCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        document.getElementById('fab-gallery').classList.toggle('on');
-                    }, 600);
                 }
             }
         }
