@@ -5,12 +5,12 @@
         <div class="item card-item" ng-repeat="item in publications">
             <div class="list card stable-bg">
                 <div class="item item-avatar" style="margin-bottom: -30px">
-                    <img ng-src="{{item.avatar.avatar.url}}">
+                    <img ng-src="{{item.avatar_url}}">
                     <h2>{{item.title}}</h2>
                     <p>{{item.name}}</p>
                 </div>
                 <div class="item item-body">
-                    <img ng-src="{{item.image.image.url}}">
+                    <img ng-src="{{item.pub_image}}">
                     <div class="description">
                         <p style="text-align:justify">{{item.description}}</p>
                     </div>
