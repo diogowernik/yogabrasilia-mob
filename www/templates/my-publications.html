@@ -1,6 +1,4 @@
-<style>.list{padding-right: 0px}</style>
-<ion-view view-title="Mensagens">
-  
+<ion-view view-title="Minhas Publicações">
     <ion-tabs class="tabs tabs-royal tabs-icon-only static" style=" margin-top:44px">
         <a ui-sref="app.cards" class="tab-item">
             <i class="icon ion-ios-people-outline"></i>
@@ -15,10 +13,13 @@
             <i class="icon ion-ios-chatboxes-outline"></i>
         </a>
     </ion-tabs>
-
-    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in" style=" margin-top:48px">
-
-      <p style="text-align:center;margin:20px"><strong>Aguarde, em breve teremos este recurso em nosso app!</strong></p>
-
+    <ion-content ng-class="{expanded:$scope.isExpanded}" style=" margin-top:48px">
+        <h4 class="content padding double-padding-x">Minhas Publicações</h4>
+        <div class="list animate-fade-slide-in-right">
+          <div class="nil-pub">
+            <p>Publique algo sobre yoga aqui?</p>
+            <p>Ou visite nosso mural do Yoga \o</p>
+          </div>
+        </div>
     </ion-content>
 </ion-view>

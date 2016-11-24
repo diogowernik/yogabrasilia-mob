@@ -188,12 +188,48 @@ confirmationSuccessUrl:  window.location.href,
         }
     })
     
+    .state('app.my-publications', {
+        url: '/my-publications',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/my-publications.html',
+                controller: 'MyPublicationsCtrl'
+            },
+            'fabContent': {
+                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                controller: function ($timeout) {
+                    /*$timeout(function () {
+                        document.getElementById('fab-profile').classList.toggle('on');
+                    }, 800);*/
+                }
+            }
+        }
+    })
+    
     .state('app.conversation', {
         url: '/conversation',
         views: {
             'menuContent': {
                 templateUrl: 'templates/conversation.html',
                 controller: 'ConversationCtrl'
+            },
+            'fabContent': {
+                // template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                controller: function ($timeout) {
+                    /*$timeout(function () {
+                        document.getElementById('fab-profile').classList.toggle('on');
+                    }, 800);*/
+                }
+            }
+        }
+    })
+
+    .state('app.notifications', {
+        url: '/notifications',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/notifications.html',
+                controller: 'NotificationsCtrl'
             },
             'fabContent': {
                 // template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
@@ -226,6 +262,6 @@ confirmationSuccessUrl:  window.location.href,
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/publications');
+    $urlRouterProvider.otherwise('/app/notifications');
 });
 

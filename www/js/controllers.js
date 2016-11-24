@@ -208,7 +208,51 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
+.controller('MyPublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab(false);
+
+    // Set Motion
+    $timeout(function() {
+        ionicMaterialMotion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
+
+    $timeout(function() {
+        ionicMaterialMotion.fadeSlideInRight({
+            startVelocity: 3000
+        });
+    }, 700);
+
+    // Set Ink
+    ionicMaterialInk.displayEffect();
+})
+
 .controller('ConversationCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.$parent.setHeaderFab('right');
+
+    // Delay expansion
+    $timeout(function() {
+        $scope.isExpanded = false;
+        $scope.$parent.setExpanded(false);
+    }, 300);
+
+    // Set Motion
+    ionicMaterialMotion.fadeSlideInRight();
+
+    // Set Ink
+    ionicMaterialInk.displayEffect();
+})
+
+.controller('NotificationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -270,18 +314,28 @@ angular.module('starter.controllers', [])
     $scope.$parent.clearFabs();
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab('right');    
+    $scope.$parent.setHeaderFab('right');
 
     $http({
       method: 'GET',
-      url: 'http://yoga.brasilia.io/cards/from-subdomain/1.json'
+      url: 'http://yoga.smartmarket.io/cards/from-subdomain/1.json'
   }).then(function successCallback(response) {
-    $scope.cards = response.data;
+    $scope.users = response.data;
+    
+    $http({
+      method: 'GET',
+      url: 'http://yoga.smartmarket.io/cards/from-subdomain/1.json'
+  }).then(function successCallback(response) {                
+    $scope.publications = response.data;                                
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
             selector: '.animate-fade-slide-in .item'
         });
     }, 200);
+    
+}, function errorCallback(response) {
+    $scope.error = response;
+});
 }, function errorCallback(response) {
     $scope.error = response;
 });

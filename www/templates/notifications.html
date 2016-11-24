@@ -1,5 +1,5 @@
 <style>.list{padding-right: 0px}</style>
-<ion-view view-title="Mensagens">
+<ion-view view-title="Notifications">
   
     <ion-tabs class="tabs tabs-royal tabs-icon-only static" style=" margin-top:44px">
         <a ui-sref="app.cards" class="tab-item">
@@ -18,7 +18,11 @@
 
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in" style=" margin-top:48px">
 
-      <p style="text-align:center;margin:20px"><strong>Aguarde, em breve teremos este recurso em nosso app!</strong></p>
+      <p style="text-align:center;margin:20px"><strong>Olá, Escolha o que vc busca</strong></p>
+      
+      <button ui-sref="app.cards" class="button button-full button-energized-900 ink">Professores e Estúdios</button>
+      <button ui-sref="app.publications" class="button button-full button-royal ink">Mural do Yoga</button>
+      
 
     </ion-content>
 </ion-view>

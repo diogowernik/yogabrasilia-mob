@@ -1,7 +1,22 @@
 <style>.list{padding-right: 0px}</style>
 <ion-view view-title="Mural do Yoga">
-
-    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+  
+    <ion-tabs class="tabs tabs-royal tabs-icon-only static" style=" margin-top:44px">
+        <a ui-sref="app.cards" class="tab-item">
+            <i class="icon ion-ios-people-outline"></i>
+        </a>
+        <a ui-sref="app.publications" class="tab-item">
+            <i class="icon ion-ios-book-outline"></i>
+        </a>
+        <a ui-sref="app.notifications" class="tab-item">
+            <i class="icon ion-ios-bell-outline"></i>
+        </a>
+        <a ui-sref="app.conversation" class="tab-item">
+            <i class="icon ion-ios-chatboxes-outline"></i>
+        </a>
+    </ion-tabs>
+    
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in" style=" margin-top:48px">
         <div class="item card-item" ng-repeat="item in publications">
             <div class="list card stable-bg">
                 <div class="item item-avatar" style="margin-bottom: -30px">
