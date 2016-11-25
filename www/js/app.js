@@ -67,7 +67,7 @@ confirmationSuccessUrl:  window.location.href,
         url: '/publications',
         views: {
             'menuContent': {
-                templateUrl: 'templates/publications.html',
+                templateUrl: 'templates/publications/index.html',
                 controller: 'PublicationsCtrl'
             },
             'fabContent': {
