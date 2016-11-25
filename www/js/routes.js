@@ -1,3 +1,5 @@
+/* global angular, document, window */
+'use strict';
 angular.module('starter').config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     // Turn off caching for demo simplicity's sake
