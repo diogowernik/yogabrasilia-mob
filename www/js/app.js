@@ -1,4 +1,5 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ng-token-auth'])
+var rootURL = 'http://yoga.smartmarket.io/';
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ng-token-auth', 'ngResource'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -45,5 +46,4 @@ confirmationSuccessUrl:  window.location.href,
  
     });
 })
-
 
