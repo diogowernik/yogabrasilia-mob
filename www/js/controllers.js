@@ -326,7 +326,7 @@ angular.module('starter.controllers', [])
       method: 'GET',
       url: 'http://yoga.smartmarket.io/cards/from-subdomain/1.json'
   }).then(function successCallback(response) {                
-    $scope.publications = response.data;                                
+    $scope.cards = response.data;                                
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
             selector: '.animate-fade-slide-in .item'
