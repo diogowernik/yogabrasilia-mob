@@ -2,40 +2,24 @@
 'use strict';
 
 angular.module('starter')
-.controller('PublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, $http) {
+.controller('PublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Publication) {
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
-
-    $http({
-      method: 'GET',
-      url: 'http://yoga.smartmarket.io/publications/from-subdomain/1.json'
-  }).then(function successCallback(response) {
-    $scope.users = response.data;
-    
-    $http({
-      method: 'GET',
-      url: 'http://yoga.smartmarket.io/publications/from-subdomain/1.json'
-  }).then(function successCallback(response) {                
-    $scope.publications = response.data;                                
-    $timeout(function() {
+    Publication.query(function success(result){
+      $scope.publications = result;
+      $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
             selector: '.animate-fade-slide-in .item'
-        });
-    }, 200);
-    
-}, function errorCallback(response) {
-    $scope.error = response;
-});
-}, function errorCallback(response) {
-    $scope.error = response;
-});
+        })}, 200);
+    }, function error(error){
+      debugger;
+      $scope.error = error;
+    });
 
-
-
-
+   
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
 })
