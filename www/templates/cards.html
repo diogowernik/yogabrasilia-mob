@@ -20,8 +20,10 @@
         <div class="item card-item" ng-repeat="item in cards">
             <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url({{item.card_cover}});"></span>
                     <strong>{{item.name}}</strong>
-                    <p><i class="icon ion-ios-location-outline"></i> Asa Norte, Lago Norte</p>
+                    <p>{{item.tag_speciality}}</p>
+                    <p><i class="icon ion-ios-location-outline"></i> {{item.tag_location}}</p>
                 </div>
             </div>
         </div>
