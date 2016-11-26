@@ -1,3 +1,3 @@
 angular.module('starter').factory('Publication', function($resource) {
-  return $resource(rootURL + '/publications.json/:id'); 
+  return $resource(rootURL + 'publications/from-subdomain/1.json'); 
 });
