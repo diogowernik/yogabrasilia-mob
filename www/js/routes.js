@@ -48,7 +48,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         url: '/cards',
         views: {
             'menuContent': {
-                templateUrl: 'templates/cards.html',
+                templateUrl: 'templates/cards/index.html',
                 controller: 'CardsCtrl'
             },
             'fabContent': {
