@@ -1,4 +1,6 @@
 var rootURL = 'http://yoga.smartmarket.io/';
+var SubdomainId = '1';
+
 angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ng-token-auth', 'ngResource'])
 
 .run(function($ionicPlatform) {
