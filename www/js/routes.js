@@ -33,15 +33,6 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
                 }
             }
         },
-
-        resolve: {
-                auth: function($auth, $state) {
-                  return $auth.validateUser().catch(function(){                    
-                    // redirect unauthorized users to the login page
-                    $state.go('app.login');
-                  });
-                }
-              }
     })
     
     .state('app.cards', {
@@ -193,7 +184,15 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
                     }, 800);*/
                 }
             }
-        }
+        },
+        resolve: {
+                auth: function($auth, $state) {
+                  return $auth.validateUser().catch(function(){                    
+                    // redirect unauthorized users to the login page
+                    $state.go('app.login');
+                  });
+                }
+              }
     })
 
     .state('app.config', {
