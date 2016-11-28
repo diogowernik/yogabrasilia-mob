@@ -9,7 +9,11 @@ angular.module('starter')
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
-    Publication.query(function success(result){
+    Publication.update({name: 'Helio W. Caruccio'}, function(response){
+      console.log(response);
+    });
+    
+    Publication.fromSubDomain(function success(result){
       $scope.publications = result;
       $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
