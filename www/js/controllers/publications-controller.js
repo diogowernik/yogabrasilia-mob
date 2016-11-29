@@ -9,10 +9,6 @@ angular.module('starter')
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab('right');
-    Publication.update({name: 'Helio W. Caruccio'}, function(response){
-      console.log(response);
-    });
-    
     Publication.fromSubDomain(function success(result){
       $scope.publications = result;
       $timeout(function() {
@@ -25,6 +21,31 @@ angular.module('starter')
     });
 
    
+    // Activate ink for controller
+    ionicMaterialInk.displayEffect();
+})
+
+
+.controller('PublicationsCreateCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Publication) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab('right');
+    Publication.fromSubDomain(function success(result){
+      $scope.publications = result;
+      $timeout(function() {
+        ionicMaterialMotion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
+        })}, 200);
+    }, function error(error){
+      debugger;
+      $scope.error = error;
+    });
+
+    $scope.create = function(){
+      alert(12);
+    }
     // Activate ink for controller
     ionicMaterialInk.displayEffect();
 })
