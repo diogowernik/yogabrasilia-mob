@@ -35,6 +35,26 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         },
     })
     
+    
+    .state('app.create-publications', {
+        url: '/create-publication',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/publications/create.html',
+                controller: 'CreatePublicationsCtrl'
+            },
+            'fabContent': {
+                // template: '<button ng-click="create()" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                controller: function ($timeout) {
+                    $timeout(function () {
+                        // document.getElementById('fab-publications').classList.toggle('on');
+                    }, 200);
+                }
+            }
+        },
+    })
+    
+    
     .state('app.cards', {
         url: '/cards',
         views: {

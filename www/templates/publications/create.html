@@ -1,0 +1,61 @@
+<style>.list{padding-right: 0px}</style>
+<ion-view view-title="Inserir Publicação">
+
+  <ion-content>
+    <ion-list>
+      <form ng-submit="button(publication)">
+
+        <label class="item item-input item-floating-label">
+          <input type="text" ng-model="publication.title" placeholder="Título da publicação">
+        </label>
+        <br/>
+        
+        <label class="item item-input item-floating-label">
+          <textarea ng-model="publication.description" placeholder="Escreva ou Cole aqui o texto de sua publicação"></textarea>
+        </label>
+        <br/>
+
+        <label class="item item-input item-floating-label">
+          <input type="text" ng-model="publication.publication_tag_kind" placeholder="Escolha uma Categoria">
+        </label>
+        <br/>
+        
+        <label class="item item-input item-hidden">
+          <input type="text" ng-model="publication.profile_id"> user_profile = este acho que tenho que configrar no backend
+        </label>
+        
+        <br/>
+        
+        <p>Escolha uma imagem</p>
+        <input type="file" class="upload" />
+        
+        
+        <label class="item item-input item-hidden">
+          <input type="text" ng-model="publication.subdomain_id"> subdomain_id =1
+        </label>
+        <label class="item item-input item-hidden">
+          <input type="text" ng-model="publication.domain_id"> domain_id = 1
+        </label>
+        <label class="item item-input item-hidden">
+          <input type="text" ng-model="publication.user_id"> current_user.id
+        </label>
+        <label class="item item-input item-hidden">
+          <input type="text" ng-model="publication.profile_id"> user_profile = este acho que tenho que configrar no backend
+        </label>
+        
+        <br/>
+        
+        <p>Escolha uma imagem</p>
+        <input type="file" class="upload" />
+        
+        
+        
+        
+        <button type="submit" class="button button-full ink">
+          Criar..
+        </button>
+      </form>
+    </ion-list>
+  </ion-content>
+  
+</ion-view>
