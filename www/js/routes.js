@@ -35,7 +35,24 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         },
     })
     
-    
+    .state('app.my-publications', {
+    url: '/my-publications',
+    views: {
+        'menuContent': {
+            templateUrl: 'templates/my-publications.html',
+            controller: 'MyPublicationsCtrl'
+        },
+        'fabContent': {
+            template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+            controller: function ($timeout) {
+                /*$timeout(function () {
+                    document.getElementById('fab-profile').classList.toggle('on');
+                }, 800);*/
+            }
+        }
+    }
+})
+
     .state('app.create-publications', {
         url: '/create-publication',
         views: {
@@ -44,16 +61,10 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
                 controller: 'CreatePublicationsCtrl'
             },
             'fabContent': {
-                // template: '<button ng-click="create()" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        // document.getElementById('fab-publications').classList.toggle('on');
-                    }, 200);
-                }
+
             }
         },
     })
-    
     
     .state('app.cards', {
         url: '/cards',
@@ -141,24 +152,6 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
             'menuContent': {
                 templateUrl: 'templates/my-cards.html',
                 controller: 'MyCardsCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
-                controller: function ($timeout) {
-                    /*$timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
-                    }, 800);*/
-                }
-            }
-        }
-    })
-    
-    .state('app.my-publications', {
-        url: '/my-publications',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/my-publications.html',
-                controller: 'MyPublicationsCtrl'
             },
             'fabContent': {
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',

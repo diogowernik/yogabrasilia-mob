@@ -26,8 +26,18 @@
         
         <br/>
         
-        <p>Escolha uma imagem</p>
-        <input type="file" class="upload" />
+        <!--Aqui Seria algo relacionado com a imagem-->
+        
+        
+        <button class="button button-full button-energized-900" ng-click="addMedia()">
+          Inserir Imagem
+        </button>
+        
+        <div id="image-preview"></div>
+        
+        <!--Fim da imagem-->
+        
+        <!--Estes campos devem ser enviados para o banco de dados, mas não são necessários estarem visiveis para o user-->
         
         
         <label class="item item-input item-hidden">
@@ -43,14 +53,10 @@
           <input type="text" ng-model="publication.profile_id"> user_profile = este acho que tenho que configrar no backend
         </label>
         
+        <!--Fim dos campos escondidos-->
+        
         <br/>
-        
-        <p>Escolha uma imagem</p>
-        <input type="file" class="upload" />
-        
-        
-        
-        
+
         <button type="submit" class="button button-full ink">
           Criar..
         </button>
