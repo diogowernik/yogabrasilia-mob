@@ -87,58 +87,6 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
-    $scope.$parent.clearFabs();
-    $scope.registrationData = {};
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
-    ionicMaterialInk.displayEffect();
-
-    $scope.login = function(provider) {
-        if (provider == 'email'){
-            $auth.submitLogin($scope.registrationData)
-                .then(function(resp) {
-                  $state.go('app.publications');
-                })
-                .catch(function(resp) {
-                  $scope.error = resp;
-                });
-            } else {
-                  $auth.authenticate(provider)
-                      .then(function(resp) {
-                          $state.go('app.publications');
-
-                      })
-                      .catch(function(resp) {
-                        $scope.error = resp;
-                    });        
-            }
-        
-    };    
-})
-
-.controller('SignUpCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $auth, $state) {
-    $scope.$parent.clearFabs();
-    
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
-    ionicMaterialInk.displayEffect();
-
-    $scope.accountCreate = function(registrationData) {
-        
-          $auth.submitRegistration(registrationData)
-            .then(function(resp) {
-                console.log(resp);
-              $state.go('app.publications');
-            })
-            .catch(function(resp) {
-              $scope.error = resp;
-            });
-        };
-})
-
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();
@@ -153,56 +101,6 @@ angular.module('starter.controllers', [])
 
     // Set Motion
     ionicMaterialMotion.fadeSlideInRight();
-
-    // Set Ink
-    ionicMaterialInk.displayEffect();
-})
-
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-    // Set Header
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
-
-    // Set Motion
-    $timeout(function() {
-        ionicMaterialMotion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
-
-    // Set Ink
-    ionicMaterialInk.displayEffect();
-})
-
-.controller('MyCardsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-    // Set Header
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = false;
-    $scope.$parent.setExpanded(false);
-    $scope.$parent.setHeaderFab(false);
-
-    // Set Motion
-    $timeout(function() {
-        ionicMaterialMotion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
 
     // Set Ink
     ionicMaterialInk.displayEffect();
