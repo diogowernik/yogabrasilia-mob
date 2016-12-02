@@ -39,7 +39,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
     url: '/my-publications',
     views: {
         'menuContent': {
-            templateUrl: 'templates/my-publications.html',
+            templateUrl: 'templates/publications/my-publications.html',
             controller: 'MyPublicationsCtrl'
         },
         'fabContent': {
@@ -83,6 +83,24 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
             }
         }
     })
+    
+    .state('app.my-cards', {
+    url: '/my-cards',
+    views: {
+        'menuContent': {
+            templateUrl: 'templates/cards/my-cards.html',
+            controller: 'MyCardsCtrl'
+        },
+        'fabContent': {
+            template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+            controller: function ($timeout) {
+                /*$timeout(function () {
+                    document.getElementById('fab-profile').classList.toggle('on');
+                }, 800);*/
+            }
+        }
+    }
+})
 
     .state('app.friends', {
         url: '/friends',
@@ -106,7 +124,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         url: '/login',
         views: {
             'menuContent': {
-                templateUrl: 'templates/login.html',
+                templateUrl: 'templates/authentication/login.html',
                 controller: 'LoginCtrl'
             },
             'fabContent': {
@@ -119,7 +137,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         url: '/sign-up',
         views: {
             'menuContent': {
-                templateUrl: 'templates/sign-up.html',
+                templateUrl: 'templates/authentication/sign-up.html',
                 controller: 'SignUpCtrl'
             },
             'fabContent': {
@@ -132,26 +150,8 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         url: '/profile',
         views: {
             'menuContent': {
-                templateUrl: 'templates/profile.html',
+                templateUrl: 'templates/profiles/profile.html',
                 controller: 'ProfileCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
-                controller: function ($timeout) {
-                    /*$timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
-                    }, 800);*/
-                }
-            }
-        }
-    })
-    
-    .state('app.my-cards', {
-        url: '/my-cards',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/my-cards.html',
-                controller: 'MyCardsCtrl'
             },
             'fabContent': {
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
