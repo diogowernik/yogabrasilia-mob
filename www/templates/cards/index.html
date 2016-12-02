@@ -18,7 +18,7 @@
     
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in"style=" margin-top:48px">
         <div class="item card-item" ng-repeat="item in cards">
-            <div ui-sref="app.gallery" class="card stable-bg ink ink-dark">
+            <div ui-sref="app.card-show" class="card stable-bg ink ink-dark">
                 <div class="item item-avatar item-text-wrap">
                     <span class="avatar" style="background-image: url({{item.card_cover}});"></span>
                     <strong>{{item.name}}</strong>

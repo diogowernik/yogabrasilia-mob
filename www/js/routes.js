@@ -25,7 +25,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
                 controller: 'PublicationsCtrl'
             },
             'fabContent': {
-                template: '<button ng-click="create()" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                template: '<button ui-sref="app.create-publications" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
                 controller: function ($timeout) {
                     $timeout(function () {
                         // document.getElementById('fab-publications').classList.toggle('on');
@@ -128,12 +128,12 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         }
     })
 
-    .state('app.profile', {
-        url: '/profile',
+    .state('app.my-profile', {
+        url: '/my-profile',
         views: {
             'menuContent': {
-                templateUrl: 'templates/profiles/profile.html',
-                controller: 'ProfileCtrl'
+                templateUrl: 'templates/profiles/my-profile.html',
+                controller: 'MyProfileCtrl'
             },
             'fabContent': {
                 template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
@@ -150,7 +150,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         url: '/conversation',
         views: {
             'menuContent': {
-                templateUrl: 'templates/conversation.html',
+                templateUrl: 'templates/conversations/index.html',
                 controller: 'ConversationCtrl'
             },
             'fabContent': {
@@ -168,7 +168,7 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
         url: '/notifications',
         views: {
             'menuContent': {
-                templateUrl: 'templates/notifications.html',
+                templateUrl: 'templates/notifications/index.html',
                 controller: 'NotificationsCtrl'
             },
             'fabContent': {
