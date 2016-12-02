@@ -102,24 +102,6 @@ angular.module('starter').config(function($stateProvider, $urlRouterProvider, $i
     }
 })
 
-    .state('app.friends', {
-        url: '/friends',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/friends.html',
-                controller: 'FriendsCtrl'
-            },
-            'fabContent': {
-                // template: '<button id="fab-friends" class="button button-fab button-fab-bottom-right expanded button-energized-900 spin"><i class="icon ion-chatbubbles"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        document.getElementById('fab-friends').classList.toggle('on');
-                    }, 900);
-                }
-            }
-        }
-    })
-
     .state('app.login', {
         url: '/login',
         views: {
