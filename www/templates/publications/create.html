@@ -3,7 +3,7 @@
 
   <ion-content>
     <ion-list>
-      <form ng-submit="button(publication)">
+      <form ng-submit="save(publication)">
 
 
 
@@ -17,47 +17,24 @@
         </label>
         <br/>
 
-        <label class="item item-input item-floating-label">
-          <input type="text" ng-model="publication.publication_tag_kind" placeholder="Escolha uma Categoria">
-        </label>
 
-        
-        <br/>
-        
-        <label class="item item-input item-hidden">
-          <input type="text" ng-model="publication.profile_id"> user_profile = este acho que tenho que configrar no backend
-        </label>
+
+      
       
         <br/>
         
         <!--Aqui Seria algo relacionado com a imagem-->
         
       
-        <button class="button button-full button-energized-900" ng-click="addMedia()">
-          Inserir Imagem
-        </button>
+        <!--<button class="button button-full button-energized-900" ng-click="addMedia()">-->
+        <!--  Inserir Imagem-->
+        <!--</button>-->
         
-        <div id="image-preview"></div>
+        <!--<div id="image-preview"></div>-->
   
         <!--Fim da imagem-->
         
-        <!--Estes campos devem ser enviados para o banco de dados, mas não são necessários estarem visiveis para o user-->
-        
-        
-        <label class="item item-input item-hidden">
-          <input type="text" ng-model="publication.subdomain_id"> subdomain_id =1
-        </label>
-        <label class="item item-input item-hidden">
-          <input type="text" ng-model="publication.domain_id"> domain_id = 1
-        </label>
-        <label class="item item-input item-hidden">
-          <input type="text" ng-model="publication.user_id"> current_user.id
-        </label>
-        <label class="item item-input item-hidden">
-          <input type="text" ng-model="publication.profile_id"> user_profile = este acho que tenho que configrar no backend
-        </label>
-        
-        <!--Fim dos campos escondidos-->
+       
         
         <br/>
 

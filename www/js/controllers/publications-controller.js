@@ -1,4 +1,4 @@
-/* global angular, document, window */
+/* global angular, document, window , _user, subDomainId */
 'use strict';
 
 angular.module('starter')
@@ -50,7 +50,23 @@ angular.module('starter')
     ionicMaterialInk.displayEffect();
 })
 
-.controller('CreatePublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('CreatePublicationsCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, Publication) {
+    
+    $scope.publication = {
+        domain_id: domainId,
+        subdomain_id: subDomainId,
+        // user_id: _user.id,
+        profile_id: 1
+    }
+    
+    $scope.save = function(){
+        Publication.save($scope.publication, function success(data){
+            debugger;
+        }, function error(data){
+            debugger;
+        });
+        console.log($scope.publication);
+    }
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();

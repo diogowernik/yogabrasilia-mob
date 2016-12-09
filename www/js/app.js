@@ -2,6 +2,7 @@ var rootURL = 'http://yoga.smartmarket.io/';
 var urlBase = 'http://yoga.smartmarket.io/';
 var SubdomainId = '1';
 var subDomainId = '1';
+var domainId = '1';
 
 angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ng-token-auth', 'ngResource'])
 
